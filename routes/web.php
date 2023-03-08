@@ -64,6 +64,8 @@ Route::get('/download',function(){
 })->name('excel');
 
  Route::get('/pdf',function(){
+    $Arabic = new \ArPHP\I18N\Arabic();
+
   $sub = Subscriber::first();
   $pdf = app('dompdf.wrapper');
 $pdf->loadView('pdf.report',['sub'=>$sub]);
